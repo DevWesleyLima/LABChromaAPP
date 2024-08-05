@@ -1,0 +1,191 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+    <PropertyGroup>
+        <TargetFrameworks>net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
+        
+		<OutputType>Exe</OutputType>
+        <RootNamespace>LABChromaAI.App</RootNamespace>
+        <UseMaui>true</UseMaui>
+        <SingleProject>true</SingleProject>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <EnableDefaultCssItems>false</EnableDefaultCssItems>
+        <Nullable>enable</Nullable>
+
+        <!-- Display name -->
+        <ApplicationTitle>LABChromaAI.App</ApplicationTitle>
+
+        <!-- App Identifier -->
+        <ApplicationId>com.companyname.labchromaai.app</ApplicationId>
+
+        <!-- Versions -->
+        <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+        <ApplicationVersion>1</ApplicationVersion>
+
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">24.0</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+        <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- App Icon -->
+        <MauiImage Include="Media\Icons\camchroma_transparent.png" />
+        <MauiImage Include="Media\Icons\chatchromatalking_transparent.png">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </MauiImage>
+        <MauiImage Include="Media\Icons\chatchromatxt_transparent.png" />
+        <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Images -->
+        <MauiImage Include="Resources\Images\*" />
+        <MauiImage Update="Resources\Images\dotnet_bot.svg" />
+
+        <!-- Custom Fonts -->
+        <MauiFont Include="Resources\Fonts\*" />
+
+        <!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+        <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Templates\Home\MainPage.xaml.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <MauiXaml Remove="Templates\Home\MainPage.xaml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Media\Bgs\labchroma_greenclouds.png" />
+      <None Remove="Media\Bgs\labchroma_home_bg.png" />
+      <None Remove="Media\Bgs\labchroma_login_bg.jpg" />
+      <None Remove="Media\Icons\camchromatxt_transparent.png" />
+      <None Remove="Media\Icons\camchroma_transparent.png" />
+      <None Remove="Media\Icons\chatchromatalking_transparent.png" />
+      <None Remove="Media\Icons\chatchromatxt_transparent.png" />
+      <None Remove="Media\Icons\chatchroma_transparent.png" />
+      <None Remove="Media\Icons\menuchromaopened_transparent.png" />
+      <None Remove="Media\Icons\menuchroma_transparent.png" />
+      <None Remove="Media\Logos\labchromatxt_logo_bg_transparent.png" />
+      <None Remove="Media\Logos\LABChroma_Logo.png" />
+      <None Remove="Media\Logos\labchroma_logo_bg_bg_white.png" />
+      <None Remove="Media\Logos\labchroma_logo_bg_bg_whitegrey.png" />
+      <None Remove="Media\Logos\labchroma_logo_bg_greywhite.png" />
+      <None Remove="Media\Logos\labchroma_logo_bg_transparent.png" />
+      <None Remove="Media\Logos\LABChroma_Logo_bg_white.png" />
+      <None Remove="Media\Logos\labchroma_logo_panda_bg_transparent.png" />
+      <None Remove="Media\Logos\labchroma_logo_talk_bg_transparent.png" />
+      <None Remove="Media\Logos\labchroma_logo_talk_bg_white.png" />
+      <None Remove="Media\Logos\labchroma_talk_bg_white.png" />
+      <None Remove="Media\Mascots\labchroma_panda_bg_color_welcome.png" />
+      <None Remove="Media\Mascots\labchroma_panda_bg_transparent.png" />
+      <None Remove="Platforms\Android\Resources\drawable\splash_sample.xml" />
+      <None Remove="Resources\Splash\splashconfigs.xml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <MauiImage Include="Media\Icons\menuchromaopened_transparent.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </MauiImage>
+      <MauiImage Include="Media\Icons\menuchroma_transparent.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </MauiImage>
+      <MauiImage Include="Media\Logos\labchromatxt_logo_bg_transparent.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </MauiImage>
+      <MauiImage Include="Media\Logos\labchroma_logo_bg_bg_whitegrey.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </MauiImage>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+        <PackageReference Include="SkiaSharp" Version="2.88.8" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Containers\" />
+      <Folder Include="Enums\" />
+      <Folder Include="Media\Videos\" />
+      <Folder Include="Templates\Chat\Code\" />
+      <Folder Include="Templates\Home\Code\" />
+      <Folder Include="Tools\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <MauiImage Include="Media\Bgs\labchroma_home_bg.png" />
+      <MauiImage Include="Media\Icons\camchromatxt_transparent.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </MauiImage>
+      <MauiImage Include="Media\Icons\chatchroma_transparent.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </MauiImage>
+      <MauiImage Include="Media\Logos\labchroma_logo_bg_bg_white.png" />
+      <MauiImage Include="Media\Logos\labchroma_logo_bg_greywhite.png" />
+      <MauiImage Include="Media\Logos\labchroma_logo_bg_transparent.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <MauiImage Include="Media\Bgs\labchroma_login_bg.jpg" />
+      <MauiImage Include="Media\Logos\labchroma_logo_panda_bg_transparent.png" />
+      <MauiImage Include="Media\Logos\labchroma_logo_talk_bg_transparent.png" />
+      <MauiImage Include="Media\Logos\labchroma_logo_talk_bg_white.png" />
+      <MauiImage Include="Media\Mascots\labchroma_panda_bg_color_welcome.png" />
+      <MauiImage Include="Media\Mascots\labchroma_panda_bg_transparent.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AndroidResource Update="Platforms\Android\Resources\drawable\background.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </AndroidResource>
+      <AndroidResource Update="Platforms\Android\Resources\drawable\loading.gif">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </AndroidResource>
+      <AndroidResource Update="Platforms\Android\Resources\values\themes.xml">
+        <CopyToOutputDirectory></CopyToOutputDirectory>
+      </AndroidResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Templates\Chat\UI\ChatPage.xaml.cs">
+        <DependentUpon>ChatPage.xaml</DependentUpon>
+      </Compile>
+      <Compile Update="Templates\Chroma\UI\ChromaPage.xaml.cs">
+        <DependentUpon>ChromaPage.xaml</DependentUpon>
+      </Compile>
+      <Compile Update="Templates\Home\UI\HomePage.xaml.cs">
+        <DependentUpon>HomePage.xaml</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <MauiXaml Update="Templates\Chat\UI\ChatPage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </MauiXaml>
+      <MauiXaml Update="Templates\Chroma\UI\ChromaPage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </MauiXaml>
+      <MauiXaml Update="Templates\Home\UI\HomePage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </MauiXaml>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="Resources\Splash\splash.gif">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
+      <PackageReference Include="Xamarin.AndroidX.Core.SplashScreen">
+        <Version>1.0.1.10</Version>
+      </PackageReference>
+    </ItemGroup>
+
+</Project>

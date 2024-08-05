@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"             
+             xmlns:colors="clr-namespace:LABChromaAI.App.Designs.Colors"         
+             x:Class="LABChromaAI.App.Templates.Chroma.UI.ChatPage"              
+             BackgroundColor="{x:Static colors:AppColors.White}">
+
+    <!-- NAV TOOL BAR-->
+    <Grid RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*,*">
+        <Grid Grid.Row="0" Grid.RowSpan="2">
+            <Image Grid.Column="0"
+                   Source="Media/labchroma_panda_bg_color_welcome.png"
+                   Margin="0,0,-2,0"
+                   Aspect="AspectFill"/>
+            <Grid Grid.Column="1" Grid.ColumnSpan="2" RowDefinitions="*,*" ColumnDefinitions="*,*,*">
+                <Label Grid.Row="0"
+                       Grid.Column="1" Grid.ColumnSpan="2"
+                       Text="Hello @User, I am Pan!"
+                       FontSize="24"
+                       TextColor="Green"
+                       HorizontalOptions="Start"
+                       VerticalOptions="End"/>
+                <Label Grid.Row="1"
+                       Grid.Column="1" Grid.ColumnSpan="2"
+                       Text="- How can I assist you today?"
+                       FontSize="16"
+                       TextColor="Black"                       
+                       Margin="1,0,0,0"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"/>
+            </Grid>
+        </Grid>
+        <ScrollView Grid.Row="2" Grid.RowSpan="10"
+                    Margin="0,5,0,0">
+            <StackLayout Padding="10" BackgroundColor="{x:Static colors:AppColors.White}">
+                <Label TextColor="{x:Static colors:AppColors.Grey_Medium}" 
+                    Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum, nisl ut laoreet fermentum, lacus lorem ultrices neque, ut pretium arcu velit ac nunc. Integer pulvinar pretium sapien, ut efficitur nisl gravida sed. Quisque a velit neque. Nullam luctus dapibus tincidunt. Nam vitae consequat purus. Ut sit amet nisi id velit facilisis lacinia. Duis vitae erat vitae lacus convallis finibus. In volutpat eu ligula quis volutpat. Ut sagittis justo et velit condimentum, in mollis odio accumsan. Maecenas a consequat metus.
+
+                             Integer consequat volutpat sapien, sed dapibus odio egestas sit amet. Sed nec orci in tortor consectetur viverra sit amet at quam. Morbi scelerisque aliquam ex, sed bibendum elit luctus ac. Morbi facilisis justo nec arcu scelerisque, sit amet facilisis ligula malesuada. Etiam et nibh sed odio dapibus malesuada. Ut sit amet nisl vel magna iaculis consequat. Nam gravida metus vel purus volutpat, quis pharetra neque interdum. Pellentesque volutpat turpis nec felis cursus, ut elementum augue tincidunt. Cras hendrerit risus eget turpis luctus, eget suscipit sapien volutpat. Sed sed fringilla magna. Etiam scelerisque erat id nunc interdum, eget sollicitudin nisl sagittis. Sed vulputate tincidunt sapien, ac feugiat justo dignissim ac. Donec vel magna in ipsum tincidunt interdum. Donec ut libero pharetra, tempus metus eget, auctor orci.
+
+                             Aenean facilisis faucibus erat at dignissim. In volutpat, elit sed maximus vehicula, libero risus luctus ex, eu ullamcorper lectus nulla id justo. Ut tempor molestie diam ut vestibulum. Fusce tincidunt risus eu risus lacinia, nec fermentum dui luctus. Donec scelerisque sollicitudin feugiat. Vivamus euismod libero et mi faucibus suscipit. Etiam varius, lacus in sagittis cursus, nisl ex cursus nunc, nec aliquet metus sapien non justo. Ut accumsan vulputate purus, ut cursus lorem malesuada non. In varius augue libero, ac venenatis erat scelerisque sed. Pellentesque fringilla mauris nec turpis cursus, et lacinia erat pretium. Sed at viverra ex. Duis at ligula dolor. Aenean varius felis ac diam volutpat fermentum.
+
+                             Vestibulum ac ex mi. Suspendisse potenti. Pellentesque varius tincidunt arcu sed fermentum. Curabitur rutrum, risus non accumsan scelerisque, est urna lacinia nisl, sed pharetra velit lectus nec lacus. Cras molestie metus ligula, vel vehicula mi volutpat nec. Sed mollis risus a dui laoreet venenatis. In pretium magna nisi, ac lacinia libero dignissim ac. Nullam id scelerisque libero. Donec quis orci pretium, faucibus est a, venenatis ex. Quisque malesuada ligula sit amet felis ultricies tempor. Nunc facilisis leo vel risus pharetra, vel suscipit lectus posuere. Proin hendrerit facilisis odio, id facilisis elit vehicula id. Suspendisse potenti. Aliquam et nibh risus. Vivamus vel augue nec dui viverra varius.
+
+                             Curabitur a augue ipsum. Mauris mollis mi vel turpis condimentum, at elementum purus fermentum. Quisque hendrerit nulla magna, at fringilla turpis scelerisque et. Donec congue nibh non risus dignissim suscipit. Pellentesque ultricies sapien orci, non aliquam ipsum tristique sed. Duis pulvinar, metus sit amet condimentum aliquam, libero nunc sodales purus, at finibus leo purus eget purus. Duis rutrum tincidunt viverra. Ut in pretium orci. Ut scelerisque diam ligula, a interdum tortor tincidunt quis. Donec sed metus eget magna scelerisque rutrum. Proin egestas lectus eu eros blandit varius. Suspendisse potenti. Cras venenatis tellus nec diam gravida feugiat. Vivamus scelerisque ultricies tortor, vel facilisis turpis. Ut convallis dui sit amet dui fermentum convallis.
+
+                             Nunc dapibus, nunc nec mollis suscipit, ligula sapien suscipit urna, a scelerisque felis ligula eget sapien. Suspendisse malesuada purus nunc, a vehicula lacus scelerisque vel. Nunc molestie tempor fermentum. Curabitur in magna massa. Integer id eros nec sem posuere posuere in vel eros. In id leo a eros ultricies mollis ut sed risus. Ut ullamcorper, sapien nec hendrerit laoreet, lorem sem dignissim erat, et lacinia ligula lorem eget ligula. Curabitur convallis elit metus, a fringilla orci feugiat eget. Ut vel felis convallis, feugiat odio nec, scelerisque ligula. Integer vestibulum sagittis metus sit amet feugiat. Nam porttitor magna orci, eu volutpat risus finibus ac.
+
+                             Pellentesque ultricies mollis risus at ultricies. Integer consequat, lectus sed dictum euismod, ex ligula dictum nisi, et efficitur lacus odio at erat. Suspendisse iaculis, ligula quis vestibulum vestibulum, libero elit condimentum mauris, in molestie nunc tortor a elit. Fusce tempor cursus lorem id facilisis. Mauris eget sagittis elit. Donec vel metus at risus consequat feugiat. In molestie sapien ut velit auctor aliquet. Fusce sodales varius arcu, eu pharetra nisi interdum quis. Donec posuere lacinia lacinia. In luctus fringilla odio vel faucibus. Vivamus mollis magna ac diam tristique, in faucibus justo lobortis. Nulla facilisi. Etiam consequat, urna nec lacinia bibendum, odio nisi luctus sem, sit amet pharetra magna leo eu velit. In vehicula, justo ac bibendum pretium, sem orci elementum nisl, non gravida nunc libero vel mi.
+
+                             Suspendisse potenti. Integer gravida pretium est, sit amet tristique felis. Curabitur in purus ipsum. Aliquam erat volutpat. Cras molestie eget risus a convallis. Nunc eget pharetra velit. Etiam a ligula neque. Nulla gravida ligula in urna faucibus pretium. Maecenas in dui eget libero euismod convallis. Curabitur ac odio feugiat, facilisis arcu sed, auctor magna. Suspendisse condimentum nisl augue, a feugiat neque porttitor nec. Aliquam id justo odio. Aenean vestibulum vehicula congue. Nam molestie, eros nec accumsan suscipit, metus sem fermentum mauris, a laoreet enim ante ut tortor. Vestibulum ornare lectus eget fermentum sagittis.
+                             
+                             Vestibulum ultricies mauris sit amet ante fermentum, sit amet convallis magna dignissim. Integer id orci in lorem pharetra lobortis. Fusce vestibulum, lectus at venenatis luctus, dui lectus aliquam tortor, id gravida erat nisi a dui. Curabitur fermentum sapien ut efficitur scelerisque. Sed ultricies lacus felis, sit amet dictum sapien dictum a. Fusce vitae accumsan sapien. Sed venenatis varius suscipit. Nam et ligula est. Phasellus scelerisque sapien eros, vel cursus sapien convallis eu. Nunc luctus eget nulla non bibendum. Suspendisse feugiat diam nunc, quis laoreet erat feugiat nec. Integer facilisis erat magna, sit amet tristique elit dictum sit amet. Nulla ultricies turpis sit amet turpis dictum sodales. Morbi condimentum sed lectus sit amet vestibulum. Aliquam erat volutpat.
+                    
+                             Vivamus nec nulla risus. Etiam fringilla odio quis nisi fermentum, at sollicitudin augue lacinia. Mauris fermentum enim non erat cursus, ac faucibus ex dictum. Nullam congue felis sit amet odio ullamcorper venenatis. Aenean vel pretium urna. Sed hendrerit faucibus metus, at luctus mauris feugiat non. Sed posuere dui risus, ac volutpat tortor finibus quis. Maecenas nec feugiat magna, nec tempus tortor. Proin malesuada efficitur magna, ut suscipit nulla varius in. Vestibulum ullamcorper scelerisque neque nec viverra. Quisque ut justo a risus convallis mollis in sed nulla. Donec luctus mi at risus iaculis aliquet. Cras lacinia mollis tristique. Proin scelerisque dui et turpis lacinia aliquet. Donec fermentum leo magna, non lacinia ex consectetur eget. Aenean ut fringilla magna." 
+                       />
+            </StackLayout>
+        </ScrollView>
+
+        <Frame Grid.Row="13" Grid.RowSpan="2" 
+               BackgroundColor="{x:Static colors:AppColors.Green_Dark}"
+               CornerRadius="50"
+               Padding="4"
+               Margin="10,5,10,5"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="Center">
+
+            <Grid  ColumnDefinitions="Auto, Auto, *, Auto">
+                <Button Grid.Column="0"
+                        Text=""
+                        FontSize="20"  
+                        CornerRadius="20"                        
+                        Margin="0,0,0,0"
+                        BackgroundColor="Transparent"/>
+
+                <Button Grid.Column="1"
+                        Text="🖇️"                        
+                        FontSize="20"
+                        CornerRadius="20" 
+                        Margin="-10,0,0,0"
+                        BackgroundColor="Transparent"/>
+
+                <Entry Grid.Column="2"
+                       x:Name="ChatEntry"
+                       Placeholder="Message..."
+                       PlaceholderColor="{x:Static colors:AppColors.White}"
+                       Keyboard="Chat"
+                       TextColor="{x:Static colors:AppColors.White}"
+                       BackgroundColor="Transparent"/>
+
+                <ImageButton Grid.Column="3"
+                         Source="Media/Mascots/labchroma_logo_talk_bg_white.png"
+                         BackgroundColor="Transparent"
+                         CornerRadius="20"                              
+                         HeightRequest="40"
+                         WidthRequest="40"
+                         Margin="10,0,10,0"/>
+            </Grid>
+        </Frame>
+    </Grid>
+</ContentPage> 

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"             
+             xmlns:colors="clr-namespace:LABChromaAI.App.Designs.Colors"
+             x:Class="LABChromaAI.App.Templates.Home.UI.HomePage"              
+             BackgroundColor="{x:Static colors:AppColors.White}">
+
+    <Grid RowDefinitions="8*,92*">
+        
+        <!-- Top Navigation Bar -->
+        <Grid Grid.Row="0"
+              BackgroundColor="{x:Static colors:AppColors.Green_Dark}"      
+              RowDefinitions="3*,92*,5*"
+              ColumnDefinitions="0*,20*,20*,20*,20*,20*">
+
+            <ImageButton x:Name="BTNLOGO_HOME" Grid.Column="1" Grid.Row="1" Source="Media/Logos/labchroma_logo_bg_bg_white.png" HorizontalOptions="End" VerticalOptions="Center" />
+
+            <ImageButton x:Name="BTNAICHAT_HOME" Grid.Column="3" Grid.Row="1" Source="Media/Icons/chatchromatxt_transparent.png" HorizontalOptions="End" VerticalOptions="Center" Clicked="OnAIChatClicked" />
+
+            <ImageButton x:Name="BTNAICAM_HOME"  Grid.Column="4" Grid.Row="1" Source="Media/Icons/camchromatxt_transparent.png" HorizontalOptions="End" VerticalOptions="Center" Clicked="OnAICamClicked" />
+
+            <ImageButton x:Name="BTNMENU_HOME"   Grid.Column="5" Grid.Row="1" Source="Media/Icons/menuchroma_transparent.png" HorizontalOptions="End" VerticalOptions="Center" Clicked="OnMenuClicked" />
+        </Grid>
+        
+        <Grid Grid.Row="1"
+              RowDefinitions="Auto">
+            <Image Grid.Column="1" 
+                   Source="Media/Bgs/labchroma_home_bg.png"
+                   BackgroundColor="Transparent"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand"
+                   Margin="0"/>
+            
+            <!-- Menu Dropdown -->
+            <AbsoluteLayout>
+                <StackLayout x:Name="SECONDARYMENU_HOME"
+                             IsVisible="False"
+                             BackgroundColor="{x:Static colors:AppColors.Green_Dark}"                             
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             AbsoluteLayout.LayoutBounds="1, 0, AutoSize, AutoSize"
+                             AbsoluteLayout.LayoutFlags="PositionProportional">
+                    <Frame Padding="10,10,10,10" Margin="10,0,0,10" Background="{x:Static colors:AppColors.White}">
+                        <StackLayout>
+                            <Label Text="Menu Item 1" TextColor="LightCoral" />
+                            <Label Text="Menu Item 2" TextColor="LightCoral" />
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>                
+            </AbsoluteLayout>
+        </Grid>
+    </Grid>   
+</ContentPage> 

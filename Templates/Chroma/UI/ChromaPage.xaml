@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"             
+             xmlns:colors="clr-namespace:LABChromaAI.App.Designs.Colors"         
+             x:Class="LABChromaAI.App.Templates.Chroma.UI.ChromaPage"              
+             BackgroundColor="{x:Static colors:AppColors.White}">
+
+    <!-- NAV TOOL BAR-->
+    <ContentPage.ToolbarItems>
+        <!-- Primary -->
+
+        <ToolbarItem Order="Primary" Priority="5" Clicked="OnCameraClicked">
+            <ToolbarItem.IconImageSource>
+                <FileImageSource File="Media/Icons/camchroma_transparent.png"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+
+    </ContentPage.ToolbarItems>
+</ContentPage> 
